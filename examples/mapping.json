@@ -1,0 +1,19 @@
+{
+  "name": "サンプル: 人事システムA → 給与システムB（従業員マスタ）",
+  "input": { "encoding": "auto" },
+  "output": { "encoding": "shift_jis", "newline": "crlf" },
+  "exclude": [
+    { "column": "在籍区分", "op": "eq", "value": "退職", "reason": "退職者のため除外" },
+    { "column": "税区分", "op": "ne", "value": "1", "reason": "税区分が甲欄以外のため除外" }
+  ],
+  "columns": {
+    "社員コード": { "from": "社員番号", "transform": [{ "zeroPad": 6 }] },
+    "氏名": { "concat": ["姓", "名"], "separator": "　" },
+    "カナ氏名": { "concat": ["姓カナ", "名カナ"], "separator": " ", "transform": ["fullwidth"] },
+    "生年月日": { "from": "生年月日", "transform": [{ "date": "YYYYMMDD" }] },
+    "入社年月日": { "from": "入社日", "transform": [{ "date": "YYYYMMDD" }] },
+    "障害者区分": { "from": "障害者区分", "map": { "1": "1一般", "2": "2特別", "*": "0" } },
+    "郵便番号": { "from": "郵便番号", "transform": ["digits"] },
+    "明細区分": { "value": "51" }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "csv-format-converter-engine",
+  "version": "1.0.0",
+  "description": "CSV フォーマット変換の変換エンジン（依存ライブラリなし）",
+  "private": true,
+  "license": "MIT",
+  "bin": {
+    "csv-convert": "bin/csv-convert.js"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

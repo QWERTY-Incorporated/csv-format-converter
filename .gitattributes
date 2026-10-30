@@ -1,0 +1,8 @@
+* text=auto
+# CSV はバイト列をそのまま保持する（改行コード・文字コードを変えない）
+*.csv -text
+*.exe binary
+*.dll binary
+*.so binary
+*.dat binary
+*.png binary

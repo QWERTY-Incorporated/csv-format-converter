@@ -1,0 +1,15 @@
+# 実データの誤コミット防止: CSV / Excel は既定で無視する
+# （サンプルのダミーデータだけを明示的に許可）
+*.csv
+*.tsv
+*.xlsx
+*.xls
+*.xlsm
+!examples/source.csv
+!examples/template.csv
+
+# 利用者ごとの設定
+settings.json
+
+*.log
+Thumbs.db
